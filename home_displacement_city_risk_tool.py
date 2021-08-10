@@ -9,7 +9,7 @@ st.title("City Low-Income Displacement Risk Projection Tool")
 
 st.header("**Location**")
 st.subheader("City and State")
-colrisk1, colrisk2 = st.beta_columns(2)
+colrisk1, colrisk2 = st.columns(2)
 
 with colrisk1:
     city = st.text_input("Enter your City: ", "City name")
@@ -21,7 +21,7 @@ st.header("**Population and Poverty**")
 link1 = '[Look up census data](https://www.census.gov/quickfacts/fact/table/US/PST045219)'
 st.markdown(link1, unsafe_allow_html=True)
 
-colrisk1, colrisk2 = st.beta_columns(2)
+colrisk1, colrisk2 = st.columns(2)
 
 with colrisk1:
     st.subheader("Population Change")
@@ -41,7 +41,7 @@ st.header("**Zillow Data**")
 link2 = '[Look up Zillow Data](https://www.zillow.com/home-values/)'
 st.markdown(link2, unsafe_allow_html=True)
 
-colrisk1, colrisk2 = st.beta_columns(2)
+colrisk1, colrisk2 = st.columns(2)
 with colrisk1:
     st.subheader("Zillow Home Value Today")
     home_value_today = st.number_input("Enter Today's Home Value: ", min_value=0.0,format='%f') 
@@ -59,7 +59,7 @@ x4 = pop_per_sq_mile * 0.00003345
 pred_score = -0.174 + x1 + x2 + x3 + x4
 
 st.header("Risk Rating for " + str(city) + ", " + str(state))
-colrisk1, colrisk2 = st.beta_columns(2)
+colrisk1, colrisk2 = st.columns(2)
 with colrisk1:
     if pred_score > 1.25:
         pred_rank = '<p style="font-family:sans serif; color:Red; font-size: 48px;">Overall risk is High</p>'
